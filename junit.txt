@@ -28,7 +28,7 @@ class BankAccountTest {
 	void test() {
 		BankAccount acc1=new BankAccount(20000.00);
 		
-		assertThrows(InsufficientFundsException.class, ()->acc1.withDreaw(21000.0));
+		assertThrows(InsufficientFundsException.class, ()->acc1.withDraw(21000.0));
 
 	}
 
@@ -49,7 +49,7 @@ public class BankAccount {
 	}
 
 	
-	void withDreaw(double withDrawAmt) throws InsufficientFundsException {
+	void withDraw(double withDrawAmt) throws InsufficientFundsException {
 		
 		if(withDrawAmt>accBanlance)
 			throw new InsufficientFundsException("InsufficientFundsException");
@@ -65,7 +65,7 @@ public class BankAccount {
 		BankAccount acc1=new BankAccount(20000.00);
 
 		try {
-			acc1.withDreaw(20000.00);
+			acc1.withDraw(20000.00);
 		} catch (InsufficientFundsException e) {
 		
 			e.printStackTrace();
